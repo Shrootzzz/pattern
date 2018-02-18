@@ -1,0 +1,5 @@
+{
+  "bbc": {
+    "rss": "http://feeds.bbci.co.uk/news/rss.xml",
+    "link": "http://www.bbc.com/"
+}
