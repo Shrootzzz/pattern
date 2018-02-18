@@ -1,14 +1,14 @@
 from newspaper import Article, news_pool
 import newspaper
-from finder import scrapeNews
 
 print("Building and downloading your news sites...")
 washington = newspaper.build('https://www.washingtonpost.com', memoize_articles=False)
 nyp = newspaper.build('https://nypost.com/news/', memoize_articles=False)
 google = newspaper.build('https://news.google.com', memoize_articles=False)
 archive = newspaper.build('http://www.gunviolencearchive.org', memoize_articles=False)
+foxnews = newspaper.build('http://www.foxnews.com', memoize_articles=False)
 
-papers = [washington, nyp, google, archive]
+papers = [washington, nyp, google, archive, foxnews]
 news_pool.set(papers, threads_per_source=2)
 news_pool.join()
 
