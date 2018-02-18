@@ -1,16 +1,16 @@
-from finder import scrape
-import io
+from finder import scrapeDB, scrapeNews
 # cnn = 'http://cnn.com'
 # cnnUrl = scrape(cnn, num)
 # print(cnnUrl)
 
-# google = 'https://news.google.com'
-# googleUrl = scrape(google, num)
-# print(googleUrl)
+google = 'https://news.google.com'
+googleUrl = scrapeNews(google)
 	
 url = 'http://www.gunviolencearchive.org'
-data = scrape(url)
+data = scrapeDB(url)
 
-with io.open('article_url.txt', 'w', encoding='utf-8') as f:
+data.extend(googleUrl)
+
+with open('article_url.txt', 'w', encoding='utf-8') as f:
 	for article in data:
 		f.write(article)
