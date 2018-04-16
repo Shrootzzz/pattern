@@ -2,7 +2,7 @@ import re
 
 templates = ["school shooter\s[a-z|A-Z|0-9|\,|\-]*\s[a-z|A-Z|0-9|\,|\-]*","mass shooter\s[a-z|A-Z|0-9|\,|\-]*\s[a-z|A-Z|0-9|\,|\-]*","[a-z|A-Z|0-9|\,|\-]*\s[a-z|A-Z|0-9|\,|\-]*\swas shot","[a-z|A-Z|0-9|\,|\-]*\s[a-z|A-Z|0-9|\,|\-]*\sElementary School","[a-z|A-Z|0-9|\,|\-]*\s[a-z|A-Z|0-9|\,|\-]*\sschool shooting"]
 shooternames = []
-victimnames = []
+victimnames = []b 
 place = []
 
 
@@ -61,45 +61,10 @@ for i in range(0,len(templates)):
 			elif words[1][0].isupper():
 				place.append(words[1])
 
-import time
-
-if filename == "data.txt":
-	print("Writing files to output.jason\n")
-	time.sleep(4)
-	file = open("output.json","w")
-	file.write('{"shooter": "Nikolas Cruz", "place": "Florida"}\n')
-	file.write('{"shooter": "Nikolas Cruz", "place": "Parkland"}\n')
-	file.write('{"shooter": "Nikolas Cruz", "place": "Parkland, Fla"}\n')
-	file.write('{"shooter": "Nikolas Cruz", "victim": "Aaron Feis", "victim": "Scott Beigel", "victim": "Alyssa Alhadeff", "victim": "Jaime Guttenberg", "place": "Florida"}\n')
-	file.write('{"victim": "Aaron Feis", "place": "Florida"}\n')
-	file.write('{"shooter": "Nikolas Cruz", "place": "Parkland"}\n')
-	file.write('{"shooter": "Nikolas Cruz", "victim": "Aaron Feis", "place": "Marjory Stoneman Douglas High School"}\n')
-	file.write('{"shooter": "Nikolas Cruz", "place": "Florida"}\n')
-	file.write('{"shooter": "Nikolas Cruz", "place": "Parkland"}\n')
-	file.write('{"shooter": "Cruz", "place": "Parkland"}\n')
-	file.write('{"shooter": "Nikolas Cruz", "place": "Florida"}\n')
-	file.write('{"shooter": "Nikolas Cruz", "place": "Florida"}\n')
-	file.write('{"shooter": "Dwight J. Murray", "place": "SYRACUSE, N.Y."}\n')
-	file.write('{"place": "Sandy Hook"}\n')
-	file.write('{"shooter": "Charles Whitman", "place": "Texas"}\n')
-	file.write('{"victim": "Charlotte Bacon", "victim": "Daniel Barden", "victim": "Rachel D\'Avino", "victim": "Olivia Engel", "victim": "Josephine Gay", "victim": "Dylan Hockley", "place": "Sandy Hook Elementary School"}\n')
-	file.write('{"shooter": "Charles Whitman", "victim": "Sherlach", "victim": "Christina Grimmie", "place": "University of Texas"}\n')
-	file.write('{"shooter": "Charles Whitman", "place": "University of Texas"}\n')
-	file.write('{"place": "Columbine"}\n')
-	file.write('{"shooter": "Charles Whitman", "place": "Texas"}\n')
-	print("Done!")
-
-else:
-	print("Writing files to output.jason\n")
-	time.sleep(3)
-	file = open("output.json","w")
-	file.write('{"shooter": "Eric Harris", "shooter": "Dylan Klebold", "victim": "Rachel Scott", "victim": "Daniel Barden", "victim": "Rachel D\'Avino", "victim": "Olivia Engel", "victim": "Josephine Gay", "victim": "Dylan Hockley", "victim": "Mark Taylor", "victim": "Anne-Marie Hochhalter", "victim": "Brian Anderson", "victim": "Patti Nielson", "victim": "Stephanie Munson", "victim": "William David Sanders", "place": "Columbine High School", "place": "Jefferson County, Colorado, U.S"}\n')
-	print("Done!")
-
-# shooternames = Remove(shooternames)
-# victimnames = Remove(victimnames)
-# print(shooternames)
-# print(victimnames)
-# print(place)
+shooternames = Remove(shooternames)
+victimnames = Remove(victimnames)
+print(shooternames)
+print(victimnames)
+print(place)
 
 
